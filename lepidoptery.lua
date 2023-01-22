@@ -104,13 +104,21 @@ function key(num, z)
 end
 
 function enc(num, d)
+	if num == 1 and selected ~= nil then
+        params:delta(n("amp", selected), d)
+		print(selected.." - amp: "..params:get(n("amp", selected)))
+    end
 	if num == 2 and selected ~= nil then
         params:delta(n("pan", selected), d)
-		    --print(params:get(n("pan", selected)))
+		print(selected.." - pan: "..params:get(n("pan", selected)))
     end
     if num == 3 and selected ~= nil then
-        params:delta(n("amp", selected), d)
-		    --print(params:get(n("amp", selected)))
+        params:delta(n("flutter", selected), d)
+		print(selected.." - flutter: "..params:get(n("flutter", selected)))
+    end
+	if num == 4 and selected ~= nil then
+        params:delta(n("memory", selected), d)
+		print(selected.." - memory: "..params:get(n("memory", selected)))
     end
 end
 
