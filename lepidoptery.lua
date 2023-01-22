@@ -104,8 +104,13 @@ function key(num, z)
 end
 
 function enc(num, d)
+	if num == 2 and selected ~= nil then
+        params:delta(n("pan", selected), d)
+		    --print(params:get(n("pan", selected)))
+    end
     if num == 3 and selected ~= nil then
         params:delta(n("amp", selected), d)
+		    --print(params:get(n("amp", selected)))
     end
 end
 
